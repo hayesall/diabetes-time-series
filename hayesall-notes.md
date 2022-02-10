@@ -245,6 +245,86 @@ Now at 6:30 A.M. though:
 09-11-1990	6:30	34       018
 ```
 
+I might have missed one earlier. Here's (current) lines 527-531:
+
+```text
+07-14-1990	7:00	0
+	195	33	3A
+07-14-1990	7:00	0
+	006	33	21
+07-14-1990	7:00	0
+	018	33	22
+```
+
+which is probably:
+
+```text
+07-14-1990	7:00	58	195
+07-14-1990	7:00	33	006
+07-14-1990	7:00	34	018
+```
+
+Now 550-555:
+
+```text
+07-17-1990	7:00	0
+	168	33	3A
+07-17-1990	7:00	0
+	006	33	21
+07-17-1990	7:00	0
+	018	33	22
+```
+
+which is probably:
+
+```text
+07-17-1990	7:00	58	168
+07-17-1990	7:00	33	006
+07-17-1990	7:00	34	018
+```
+
+Big jump down to 1004-1009:
+
+```text
+11-08-1990	7:00	0
+	217	33	3A
+11-08-1990	7:00	0
+	006	33	21
+11-08-1990	7:00	0
+	020	33	22
+```
+
+**Big Change**: It appears that somewhere around 1990-09-24, the
+pattern for 58/33/34 → ?/6/18 switched to 58/33/34 → ?/6/20,
+which probably means one of the insulin doses increased.
+(*Can I represent this as an intervention or an action in some way?*)
+Probably translating into this:
+
+```text
+11-08-1990	7:00	58	217
+11-08-1990	7:00	33	006
+11-08-1990	7:00	34	020
+```
+
+This seems to continue for a while, now lines 1116-1121 read:
+
+```text
+11-29-1990	7:00	0
+	209	33	3A
+11-29-1990	7:00	0
+	006	33	21
+11-29-1990	7:00	0
+	020	33	22
+```
+
+which I've turned into:
+
+```text
+11-29-1990	7:00	58	209
+11-29-1990	7:00	33	006
+11-29-1990	7:00	34	020
+```
+
 ### Unclear what quantities represent
 
 In `data-01`, using `33 = Regular insulin dose` as an example, I have no clue what "values" represent.
