@@ -377,6 +377,66 @@ I've adjusted this reading to:
 05-26-1991	06:00	33	004
 ```
 
+---
+
+`data-22` is an odd case. It's the only one that has
+"observation type 36", and it's in the second row:
+
+```text
+03-14-1991	22:05	35	12
+03-14-1991	22:06	36	5
+```
+
+Comparing with how this user typically behaves around
+an hour before and after the 22:00 time:
+
+```text
+03-14-1991	22:05	35	12		UltraLente insulin dose
+03-14-1991	22:06	36	5		<-- mystery
+
+03-16-1991	21:53	57	271		Unspecified blood glucose measurement
+03-16-1991	21:54	33	4		Regular insulin dose
+03-16-1991	21:54	35	12		UltraLente insulin dose
+03-16-1991	21:56	33	19		Regular insulin dose
+
+03-19-1991	22:27	57	98		Unspecified blood glucose measurement
+03-19-1991	22:29	35	12		UltraLente insulin dose
+
+03-20-1991	23:13	57	42		Unspecified blood glucose measurement
+03-20-1991	23:15	35	12		UltraLente insulin dose
+
+03-24-1991	21:43	57	38		Unspecified blood glucose measurement
+03-24-1991	21:45	35	12		UltraLente insulin dose
+
+03-25-1991	22:28	57	247		Unspecified blood glucose measurement
+03-25-1991	22:30	33	3		Regular insulin dose
+03-25-1991	22:30	35	12		UltraLente insulin dose
+03-25-1991	22:37	33	3		Regular insulin dose
+03-25-1991	22:38	56	126		(Unknown, but common measurement)
+```
+
+Alternatively, there are quite a few lines that end in 5:
+
+```text
+03-17-1991	18:00	33	5
+03-23-1991	19:25	33	5
+03-29-1991	18:22	33	5
+04-17-1991	18:12	33	5
+04-27-1991	08:14	33	5
+```
+
+It appears that the only cases where this user's line ends in `5`
+are cases where action type 33 is recorded.
+
+Furthermore, the user does seem to frequently take multiple types of
+insulin together, including the 33/35/33 triplet.
+
+So I suspect the correct answer here is that 36 should be a 33:
+
+```text
+03-14-1991	22:06	33	5
+```
+
 ### Unclear what quantities represent
 
 In `data-01`, using `33 = Regular insulin dose` as an example, I have no clue what "values" represent.
