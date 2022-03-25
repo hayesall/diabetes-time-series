@@ -67,6 +67,36 @@ Educated guesses from looking at the data:
     "57" is an unknown glucose measurement, bad data entry?
 ```
 
+### Incorrect Date Formatting
+
+This one had me stumped for a while.
+
+`data-29`: It seems almost certain that lines 768 and 769
+should be `11:00`
+
+```text
+08-20-1990	11:0	60	194
+08-20-1990	11:0	33	005
+```
+
+`data-67` has `56:35` and `188:00`.
+
+```text
+792			04-08-1991	22:30	48	158
+793			04-09-1991	56:35	58	237
+794			04-09-1991	56:35	33	016
+795			04-09-1991	56:35	34	040
+796			04-09-1991	11:50	60	236
+...
+893			04-21-1991	12:13	33	010
+894			04-21-1991	188:00	62	128
+895			04-21-1991	188:00	33	014
+896			04-21-1991	23:30	48	331
+```
+
+The `56:35` is probably a `06:35`, and the `188:00` is probably
+`18:00` (based on the user's data from similar time points).
+
 ### Corrupted data?
 
 Consider `data-27` lines 802-815.
